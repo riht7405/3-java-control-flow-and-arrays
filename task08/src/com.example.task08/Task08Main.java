@@ -2,19 +2,25 @@ package com.example.task08;
 
 public class Task08Main {
     public static void main(String[] args) {
-        //здесь вы можете вручную протестировать ваше решение, вызывая реализуемый метод и смотря результат
-        // например вот так:
-        /*
-        int[] arr = new int[2];
-        arr[0] = 2;
-        arr[1] = 3;
-        System.out.println(mult(arr));
-         */
+        int[] myArray = new int[4];
+        myArray[0] = 2;
+        myArray[1] = 10;
+        myArray[2] = 10;
+        myArray[3] = 0;
+        System.out.println(mult(myArray));
     }
 
     static long mult(int[] arr) {
-        //todo напишите здесь свою корректную реализацию этого метода, вместо существующей
-        return 1;
-    }
+        // Обрабатываем случай пустого массива
+        if (arr.length == 0) {
+            return 0;
+        }
 
+        // Используем long для больших произведений
+        long total = 1;
+        for (int i = 0; i < arr.length; i++) {
+            total *= arr[i];
+        }
+        return total;
+    }
 }
